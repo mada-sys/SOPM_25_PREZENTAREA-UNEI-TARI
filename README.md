@@ -7,4 +7,4 @@
 
 
  
-                                 - traditiilor
+                                - traditiilor
