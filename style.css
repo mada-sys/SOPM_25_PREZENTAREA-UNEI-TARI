@@ -781,6 +781,105 @@ img {
   .home .swiper-button-next {
     right: 2rem;
   }
+/* CONTACT */
+.contact__container {
+    row-gap: 3rem;
+}
+
+.contact__form {
+    gap: 1.25rem;
+}
+
+.contact__box {
+    position: relative;
+    height: 3.6rem;
+}
+
+.contact__input {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--container-color); 
+    border: 3px solid var(--border-color); 
+    border-radius: 0.5rem;
+    outline: none;
+    color: var(--text-color); 
+    font-weight: var(--font-semi-bold);
+    transition: border-color .4s;
+}
+
+.contact__input:focus {
+    border-color: var(--first-color); 
+}
+
+.contact__label {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    font-size: var(--small-font-size);
+    color: var(--first-color);
+    background-color: var(--body-color); 
+    padding: 0.25rem;
+    z-index: 10;
+}
+
+.contact__area {
+    height: 10rem;
+}
+
+.contact__area textarea {
+    resize: none;
+}
+
+.contact__button {
+    border: none;
+    cursor: pointer;
+    justify-self: start;
+}
+
+/* Info Contact */
+.contact__info {
+    margin-top: 2rem;
+}
+
+.contact__info-title {
+    font-size: var(--h3-font-size);
+    margin-bottom: 1.5rem;
+}
+
+.contact__info-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact__info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact__info-icon {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.contact__info-subtitle {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+}
+
+.contact__info-detail {
+    display: block;
+    font-weight: var(--font-semi-bold);
+}
+
+/* Mesaj de confirmare/eroare */
+.contact__message {
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+}
 
   .destination__container {
     grid-template-columns: repeat(3, 340px);
