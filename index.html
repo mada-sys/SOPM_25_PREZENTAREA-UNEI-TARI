@@ -1,20 +1,229 @@
 <!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Explorer</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <header>
-    <a href="#" class="logo">Travel<span>Explorer</span></a>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <ul class="navbar" id="navbar">
-      <li><a href="#home" class="active">Acasă</a></li>
-      <li><a href="#destinatii">Destinații</a></li>
-      <li><a href="#servicii">Servicii</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </header>
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+
+      <title>Proiect SOPM</title>
+   </head>
+   <body>
+      <!--==================== HEADER ====================-->
+      <header class="header" id="header">
+         <nav class="nav container">
+            <a href="#" class="nav__logo">
+               <img src="assets/img/favicon.png" alt="image">
+               <span>Mexic</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li>
+                     <a href="index.html" class="nav__link active-link">Acasa</a>
+                  </li>
+
+                  <li>
+                     <a href="atractii.html" class="nav__link">Atractii turistice</a>
+                  </li>
+
+                  <li>
+                     <a href="traditii.html" class="nav__link">Traditii</a>
+                  </li>
+
+                  <li>
+                     <a href="contact.html" class="nav__link">Contact</a>
+                  </li>
+               </ul>
+
+               <!-- Close button -->
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-large-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__buttons">
+               <!-- Theme button -->
+               <i class="ri-moon-fill nav__theme" id="theme-button"></i>
+
+               <!-- Toggle button -->
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-apps-2-fill"></i>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <main class="main">
+         <section class="home section" id="home">
+            <img src="assets/img/home-bg.png" alt="image" class="home__bg">
+            <div class="home__blur"></div>
+
+            <div class="home__container container grid">
+               <div class="home__data">
+                  <h1 class="home__title">Excursie <br> in jurul <br> Mexicului</h1>
+                  <p class="home__description">
+                     Explorează cele mai frumoase destinații turistice din această țară plină de viață — de la plajele turcoaz din Cancun și ruinele antice de la Chichen Itza, până la străzile colorate ale orașului Ciudad de México.
+Lasă-te cucerit de cultura, muzica și aromele Mexicului și transformă fiecare călătorie într-o aventură de neuitat.
+                  </p>
+
+                  <a href="atractii.html" class="button button__opa-30">
+                     Exploreaza lumea acum!
+                     <i class="ri-arrow-right-long-line"></i>
+                  </a>
+               </div>
+
+               <div class="home__swiper swiper">
+                  <div class="swiper-wrapper">
+                     <article class="home__article swiper-slide">
+                        <img src="assets/img/p9.jpg" alt="image" class="home__img">
+                     </article>
+
+                     <article class="home__article swiper-slide">
+                        <img src="assets/img/p10.jpg" alt="image" class="home__img">
+                     </article>
+
+                     <article class="home__article swiper-slide">
+                        <img src="assets/img/p8.jpg" alt="image" class="home__img">
+                     </article>
+
+                     <article class="home__article swiper-slide">
+                        <img src="assets/img/p13.jpg" alt="image" class="home__img">
+                     </article>
+                  </div>
+
+                  <!-- Navigation buttons -->
+                  <div class="swiper-button-prev">
+                     <i class="ri-arrow-left-long-line"></i>
+                  </div>
+
+                  <div class="swiper-button-next">
+                     <i class="ri-arrow-right-long-line"></i>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!--==================== JOIN ====================-->
+         <section class="join section" id="join">
+            <div class="join__container container grid">
+               <div class="join__data">
+                  <h2 class="section__title">Aventura ta <br> incepe aici</h2>
+                  <p class="join__description">
+                     Fi la curent cu cele mai noi oferte si destinatii turistice. Aboneaza-te la newsletter-ul nostru si nu rata nicio oportunitate.
+                  </p>
+                  <form action="" class="join__form">
+                     <input type="email" placeholder="Enter your email" class="join__input">
+                     <button type="submit" class="join__button button">
+                        Join our newsletter <i class="ri-arrow-right-long-line"></i>
+                     </button>
+                  </form>
+               </div>
+               <img src="assets/img/join-img.png" alt="image" class="join__img">
+            </div>
+         </section>
+      </main>
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer__container container grid">
+
+            <div class="footer__content grid">
+               <div>
+                  <h3 class="footer__title">About</h3>
+
+                  <ul class="footer__links">
+                     <li>
+                        <a href="#" class="footer__link">Despre noi</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Features</a>
+                     </li>
+                     
+                     <li>
+                        <a href="#" class="footer__link">News & Blogs</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <h3 class="footer__title">Contact</h3>
+
+                  <ul class="footer__links">
+                     <li>
+                        <a href="#" class="footer__link">Call Center</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Suport</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Contactati-ne</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <h3 class="footer__title">Suport</h3>
+
+                  <ul class="footer__links">
+                     <li>
+                        <a href="#" class="footer__link">Privacy Policy</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Termeni si conditii</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Plati</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <h3 class="footer__title">Social</h3>
+
+                  <div class="footer__social">
+                     <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-facebook-circle-fill"></i>
+                     </a>
+
+                     <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-instagram-fill"></i>
+                     </a>
+
+                     <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-twitter-x-fill"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         <span class="footer__copy">
+            
+         </span>
+      </footer>
+
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="assets/js/scrollreveal.min.js"></script>
+
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+   </body>
+</html>
