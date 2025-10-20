@@ -6,3 +6,4 @@
  site-ul web include prezentarea: 
 - atractiilor turistice
 - traditiilor
+- pagina de contact
