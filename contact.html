@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <link rel="stylesheet" href="assets/css/contact.css">
+
+    <title>Contact - Mexic</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/img/favicon.png" alt="image">
+                <span>Mexic</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Acasa</a></li>
+                    <li><a href="atractii.html" class="nav__link">Atractii turistice</a></li>
+                    <li><a href="traditii.html" class="nav__link">Traditii</a></li>
+                    <li><a href="galerie.html" class="nav__link">Galerie</a></li>
+                    <li><a href="contact.html" class="nav__link **active-link**">Contact</a></li> </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-large-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-moon-fill nav__theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-apps-2-fill"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Contactează-ne</h2>
+            <div class="contact__container container grid">
+                
+                <form action="" class="contact__form grid" id="contact-form">
+                    <div class="contact__box">
+                        <label for="name" class="contact__label">Nume complet</label>
+                        <input type="text" id="name" required class="contact__input">
+                    </div>
+
+                    <div class="contact__box">
+                        <label for="email" class="contact__label">Adresă de email</label>
+                        <input type="email" id="email" required class="contact__input">
+                    </div>
+
+                    <div class="contact__box contact__area">
+                        <label for="message" class="contact__label">Mesajul tău</label>
+                        <textarea name="message" id="message" required class="contact__input"></textarea>
+                    </div>
+
+                    <button type="submit" class="button contact__button">
+                        Trimite mesajul
+                        <i class="ri-send-plane-line"></i>
+                    </button>
+
+                    <p class="contact__message" id="contact-message"></p>
+                </form>
+
+                <div class="contact__info">
+                    <h3 class="contact__info-title">Informații suplimentare</h3>
+                    <div class="contact__info-data">
+                        <div class="contact__info-item">
+                            <i class="ri-mail-line contact__info-icon"></i>
+                            <div>
+                                <h4 class="contact__info-subtitle">Email</h4>
+                                <span class="contact__info-detail">mexic.travel@email.com</span>
+                            </div>
+                        </div>
+
+                        <div class="contact__info-item">
+                            <i class="ri-phone-line contact__info-icon"></i>
+                            <div>
+                                <h4 class="contact__info-subtitle">Telefon</h4>
+                                <span class="contact__info-detail">+40 700 000 000</span>
+                            </div>
+                        </div>
+
+                        <div class="contact__info-item">
+                            <i class="ri-map-pin-line contact__info-icon"></i>
+                            <div>
+                                <h4 class="contact__info-subtitle">Adresa</h4>
+                                <span class="contact__info-detail">Str. Călătorilor, Nr. 1, Ciudad de México</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/contact.js"></script>
+</body>
+   <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer__container container grid">
+
+            <div class="footer__content grid">
+               <div>
+                  <h3 class="footer__title">About</h3>
+
+                  <ul class="footer__links">
+                     <li>
+                        <a href="#" class="footer__link">Despre noi</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Features</a>
+                     </li>
+                     
+                     <li>
+                        <a href="#" class="footer__link">News & Blogs</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <h3 class="footer__title">Contact</h3>
+
+                  <ul class="footer__links">
+                     <li>
+                        <a href="#" class="footer__link">Call Center</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Suport</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Contactati-ne</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <h3 class="footer__title">Suport</h3>
+
+                  <ul class="footer__links">
+                     <li>
+                        <a href="#" class="footer__link">Privacy Policy</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Termeni si conditii</a>
+                     </li>
+
+                     <li>
+                        <a href="#" class="footer__link">Plati</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div>
+                  <h3 class="footer__title">Social</h3>
+
+                  <div class="footer__social">
+                     <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-facebook-circle-fill"></i>
+                     </a>
+
+                     <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-instagram-fill"></i>
+                     </a>
+
+                     <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                        <i class="ri-twitter-x-fill"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         <span class="footer__copy">
+            
+         </span>
+      </footer>
+
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="assets/js/scrollreveal.min.js"></script>
+
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+</html>
