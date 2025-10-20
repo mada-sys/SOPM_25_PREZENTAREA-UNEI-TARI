@@ -6,6 +6,8 @@ v2.1.0 - Stilizarea paginii index.html
 
 v2.2.0 - Adaugarea animatiilor (fisierelor js)
 
+v2.2.1 - Adaugarea mai multor animatii in fisierul main.js
+
 v3.0.0 - Adaugarea paginii atractii.html la pagina principala
 
 v3.1.0 - Stilizarea paginii atractii.html
