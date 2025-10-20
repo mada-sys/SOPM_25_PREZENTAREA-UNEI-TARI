@@ -7,3 +7,5 @@ v2.1.0 - Stilizarea paginii index.html
 v3.0.0 - Adaugarea paginii atractii.html la pagina principala
 
 v3.1.0 - Stilizarea paginii atractii.html
+
+v4.0.0 - Adaugarea paginii contact.html la pagina principala
