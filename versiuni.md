@@ -19,3 +19,5 @@ v4.1.0 - Stilizarea paginii contact.html
 v4.1.1 - Corectare de bug (eliminarea unei erori in pagina contact.html)
 
 v4.1.2 - Corectare de bug (modificarea unei imaginii in pagina atractii.html)
+
+v5.0.0 -Adaugarea paginii traditii.html
