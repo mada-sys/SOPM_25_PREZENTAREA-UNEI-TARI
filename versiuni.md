@@ -17,3 +17,5 @@ v4.0.0 - Adaugarea paginii contact.html la pagina principala
 v4.1.0 - Stilizarea paginii contact.html
 
 v4.1.1 - Corectare de bug (eliminarea unei erori in pagina contact.html)
+
+v4.1.2 - Corectare de bug (modificarea unei imaginii in pagina atractii.html)
