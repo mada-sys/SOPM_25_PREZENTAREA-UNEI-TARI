@@ -26,5 +26,6 @@ v5.1.0 - Stilizarea paginii traditii.html
 
 v6.0.0 -Adaugarea paginii harta.html
 
-v6.1.0 -Adaugarea folderului assets
 v6.1.0 - Restructurarea tuturor paginilor si curatarea codului
+
+v7.0.0 -Adaugarea folderului assets
