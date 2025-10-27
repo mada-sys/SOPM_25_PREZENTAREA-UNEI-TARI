@@ -10,9 +10,6 @@
   <!--=============== REMIXICONS ===============-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
-  <!--=============== SWIPER CSS ===============-->
-  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
   <!--=============== CSS ===============-->
   <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -21,14 +18,17 @@
 <body>
 
   <!--==================== HEADER ====================-->
-  <header class="header" id="header"> <nav class="nav container"> 
-   <a href="#" class="nav__logo"> 
-       <img src="assets/img/favicon.png" alt="image">
-      <span>Mexic</span>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="harta.html" class="nav__logo">
+        <img src="assets/img/favicon.png" alt="image">
+        <span>Mexic</span>
+      </a>
+
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Acasă</a></li>
-          <li><a href="atractii.html" class="nav__link">Atractii turistice</a></li>
+          <li><a href="atractii.html" class="nav__link">Atracții turistice</a></li>
           <li><a href="traditii.html" class="nav__link active-link">Tradiții</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
@@ -52,68 +52,46 @@
 
   <main class="main">
 
-    <!--==================== TESTIMONIAL ====================-->
-    <section class="testimonial section" id="testimonial">
+    <!--==================== TRADITII ====================-->
+    <section class="traditii section" id="traditii">
       <h2 class="section__title">Tradiții <br> Mexicane</h2>
 
-      <div class="testimonial__container container grid">
-        <img src="assets/img/mexicotraditii.png" alt="Tradiții Mexicane" class="testimonial__img">
+      <div class="traditii__container container">
+        <!-- STÂNGA: IMAGINE -->
+        <div class="traditii__img-wrapper">
+          <img src="assets/img/mexicotraditii.png" alt="Tradiții Mexicane" class="traditii__img">
+        </div>
 
-        <div class="testimonial__swiper swiper">
-          <div class="swiper-wrapper">
+        <!-- DREAPTA: CARD TEXT CU SLIDER CUSTOM -->
+        <div class="traditii__panel">
 
-            <div class="testimonial__card swiper-slide">
-              <h2 class="testimonial__title">Día de los Muertos</h2>
-              <p class="testimonial__description">
-                În fiecare an, pe 1 și 2 noiembrie, Mexicul se transformă într-o explozie de culoare, muzică și parfum de cempasúchil — floarea portocalie a morților, simbol al legăturii dintre lumea celor vii și cea a spiritelor. Casele, piețele și școlile se împodobesc cu lumânări, ghirlande, cranii din zahăr și picturi vii, iar aerul devine o îmbinare între solemnitate și bucurie.
+          <!-- butoane -->
+          <button class="traditii__btn traditii__btn--prev" id="traditiiPrevBtn">
+            <i class="ri-arrow-left-s-line"></i>
+          </button>
+          <button class="traditii__btn traditii__btn--next" id="traditiiNextBtn">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
 
-                Deși numele „Ziua Morților” poate părea trist, în Mexic este o celebrare a vieții și a amintirii. Oamenii nu plâng pierderea celor dragi, ci îi sărbătoresc cu cântece, povești și ofrande, crezând că sufletele lor se întorc pentru o noapte magică alături de familie.
+          <!-- conținut care se schimbă -->
+          <article class="traditii__card" id="traditiiCard">
+            <h3 class="traditii__title" id="traditiiTitle">Día de los Muertos</h3>
+            <p class="traditii__text" id="traditiiText">
+              În fiecare an, pe 1 și 2 noiembrie, Mexicul se transformă într-o explozie de culoare,
+              muzică și parfum de cempasúchil — floarea portocalie a morților, simbol al legăturii
+              dintre lumea celor vii și cea a spiritelor. Casele, piețele și școlile se împodobesc
+              cu lumânări, ghirlande, cranii din zahăr și picturi vii, iar aerul devine o îmbinare
+              între solemnitate și bucurie.<br><br>
+              Deși numele „Ziua Morților” poate părea trist, în Mexic este o celebrare a vieții și a
+              amintirii. Oamenii nu plâng pierderea celor dragi, ci îi sărbătoresc cu cântece, povești
+              și ofrande, crezând că sufletele lor se întorc pentru o noapte magică alături de familie.<br><br>
+              Cimitirele devin pline de viață: familiile aprind lumânări, aduc mâncărurile preferate
+              ale celor dragi și povestesc întâmplări din trecut, într-o atmosferă caldă și plină de
+              respect. Día de los Muertos nu este o despărțire, ci o reîntâlnire, o dovadă că iubirea
+              continuă să unească generații prin amintire și tradiție.
+            </p>
+          </article>
 
-                Cimitirele devin pline de viață: familiile aprind lumânări, aduc mâncărurile preferate ale celor dragi și povestesc întâmplări din trecut, într-o atmosferă caldă și plină de respect. Día de los Muertos nu este o despărțire, ci o reîntâlnire, o dovadă că iubirea continuă să unească generații prin amintire și tradiție.
-              </p>
-              <div class="testimonial__profile">
-                <div class="testimonial__info">
-                </div>
-              </div>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <h2 class="testimonial__title">Las Posadas</h2>
-              <p class="testimonial__description">
-                În Mexic, în perioada 16–24 decembrie, se celebrează Las Posadas, o tradiție care reamintește călătoria Mariei și a lui Iosif în căutarea unui adăpost înainte de nașterea lui Isus. Comunitățile se adună în fiecare seară pentru procesiuni, cântece și rugăciuni, imitând căutarea de adăpost a Sfintei Familii.
-
-                Participanții merg din casă în casă, cântând și cerând „posada” (adăpost), până când gazdele îi primesc și oferă dulciuri, fructe și ciocolată caldă. Casele și străzile sunt decorate cu lumini, ghirlande și piñatas colorate, iar atmosfera devine un amestec de solemnitate, bucurie și comunitate.
-
-                Las Posadas nu este doar o celebrare religioasă, ci și o sărbătoare a solidarității, ospitalității și tradiției, care aduce familiile și comunitățile împreună în spirit de generozitate și sărbătoare.
-              </p>
-              <div class="testimonial__profile">
-                <div class="testimonial__info">
-                  
-                </div>
-              </div>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <h2 class="testimonial__title">Fiesta de la Virgen de Guadalupe</h2>
-              <p class="testimonial__description">
-                Pe 12 decembrie, Mexicul celebrează Fiesta de la Virgen de Guadalupe, în cinstea patroanei țării. Sărbătoarea comemorează apariția Fecioarei Maria în 1531 lui Juan Diego, pe dealul Tepeyac, în apropiere de Ciudad de México.
-
-                Milioane de pelerini vin să se roage, să aprindă lumânări și să participe la procesiuni, cântări și dansuri tradiționale. Bisericile și piețele se umplu de flori, muzică și culoare, iar atmosfera este plină de devoțiune și bucurie.
-
-                Această zi nu este doar un eveniment religios, ci și o celebrare a identității mexicane și a legăturii profunde dintre credință, comunitate și tradiție.
-              </p>
-              <div class="testimonial__profile">
-                <div class="testimonial__info">
-                  
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Navigation buttons -->
-          <div class="swiper-button-prev"><i class="ri-arrow-left-long-line"></i></div>
-          <div class="swiper-button-next"><i class="ri-arrow-right-long-line"></i></div>
         </div>
       </div>
     </section>
@@ -214,9 +192,7 @@
     <i class="ri-arrow-up-line"></i>
   </a>
 
-  <!--=============== SCRIPTS ===============-->
-  <script src="assets/js/scrollreveal.min.js"></script>
-  <script src="assets/js/swiper-bundle.min.js"></script>
+  <!--=============== SCRIPT ===============-->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
