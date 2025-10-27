@@ -1,0 +1,1121 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /* Colors */
+  --title-color: hsl(220, 8%, 10%);
+  --text-color: hsl(220, 8%, 40%);
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(220, 8%, 6%);
+  --body-color: hsl(220, 8%, 99%);
+  --container-color: hsl(220, 8%, 96%);
+  --opacity-color-30: hsla(0, 0%, 90%, .3);
+  --opacity-color-20: hsla(0, 0%, 90%, .2);
+
+  /* Fonts */
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Dancing Script", cursive;
+  --biggest-font-size: 3rem;
+  --big-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /* Font weight */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /* z index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive tokens */
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 6rem;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE RESET ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color .4s;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== DARK THEME ===============*/
+.dark-theme {
+  --title-color: hsl(220, 8%, 90%);
+  --text-color: hsl(220, 8%, 70%);
+  --body-color: hsl(220, 8%, 8%);
+  --container-color: hsl(220, 8%, 12%);
+  --opacity-color-30: hsla(0, 0%, 15%, .3);
+  --opacity-color-20: hsla(0, 0%, 15%, .2);
+}
+
+.dark-theme .scrollup {
+  background-color: var(--container-color);
+}
+
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(220, 6%, 15%);
+}
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(220, 6%, 40%);
+}
+
+/*=============== GENERIC LAYOUT HELPERS ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  font-size: var(--big-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: var(--z-fixed);
+}
+
+.header--blur {
+   background: rgba(15, 15, 15, 0.4);
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.nav {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   min-height: 4rem;
+   color: #fff;
+}
+
+.nav__logo span {
+   color: #fff;
+}
+.nav__logo img {
+   filter: brightness(1) contrast(1.2);
+}
+
+.nav__list .nav__link {
+   color: #fff;
+   font-weight: 600;
+}
+
+.nav__theme,
+.nav__toggle {
+   color: #fff;
+}
+
+/* Mobile menu */
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: -120%;
+    left: 0;
+    background-color: var(--body-color);
+    width: 100%;
+    padding-block: 4rem;
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, .1);
+    border-radius: 0 0 1.5rem 1.5rem;
+    transition: top .4s;
+  }
+}
+
+.nav__list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.nav__link {
+  position: relative;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+.nav__link::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--title-color);
+  position: absolute;
+  left: 0;
+  bottom: -.5rem;
+  transition: width .4s;
+}
+
+.nav__link:hover::after {
+  width: 60%;
+}
+
+.nav__close {
+  color: var(--title-color);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+/* Show menu (mobile) */
+.show-menu {
+  top: 0;
+}
+
+/* Header in scroll state (light bg) */
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 8px 16px hsla(0, 0%, 0%, .1);
+}
+
+.bg-header :is(.nav__logo, .nav__toggle, .nav__theme) {
+  color: var(--title-color);
+}
+
+.bg-header .nav__logo img {
+  filter: invert(100%);
+}
+
+/* Active link underline */
+.nav__link.active-link {
+   position: relative;
+}
+.nav__link.active-link::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -0.4rem;
+   width: 100%;
+   height: 2px;
+   background-color: currentColor;
+   border-radius: 999px;
+}
+
+/*=============== HOME (INDEX HERO) ===============*/
+
+.home {
+  position: relative;
+}
+
+.home__bg, 
+.home__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home__bg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.home__blur {
+  background-color: var(--opacity-color-20);
+  backdrop-filter: blur(40px);
+  transition: background-color .4s;
+}
+
+.home__container {
+   position: relative;
+   padding-top: 7rem; /* ca să nu intre sub header fix */
+   padding-bottom: 3rem;
+   align-items: center;
+   grid-template-columns: 1fr 1fr;
+   gap: 2rem;
+}
+
+.home__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem; /* mai mult spațiu între text și imagine */
+}
+
+@media screen and (min-width: 1150px) {
+  .home__layout {
+    grid-template-columns: 1.1fr 0.9fr; /* textul ia puțin mai mult spațiu */
+    gap: 6rem;
+  }
+}
+
+
+.home__data {
+   color: #fff;
+   max-width: 600px;
+   z-index: 2;
+}
+
+.home__title {
+   font-size: var(--biggest-font-size);
+   font-weight: var(--font-bold);
+   line-height: 1.1;
+   margin-bottom: 1rem;
+   color: #fff;
+}
+
+.home__description {
+   color: #eee;
+   font-size: var(--normal-font-size);
+   line-height: 1.5;
+   margin-bottom: 2rem;
+}
+
+/*=============== HERO BUTTON ===============*/
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  font-weight: var(--font-semi-bold);
+  border-radius: .5rem;
+  transition: background-color .4s;
+}
+
+.button i {
+  font-weight: initial;
+  font-size: 1.5rem;
+  transition: transform .4s;
+}
+
+.button:hover i {
+  transform: translateX(.5rem);
+}
+
+.button__opa-30 {
+   background-color: rgba(255,255,255,0.15);
+   color: #fff;
+   border: 1px solid rgba(255,255,255,0.4);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+}
+
+/*=============== HOME GALLERY (INDEX SLIDER CUSTOM) ===============*/
+
+.home__gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__slider {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  background-color: #000;
+  margin-left: 2rem;
+}
+
+.home__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.home__img.active {
+  opacity: 1;
+}
+
+/*=============== DESTINATION CARDS (ex. atractii) ===============*/
+
+.destination__container {
+  grid-template-columns: 300px;
+  justify-content: center;
+}
+
+.destination__card {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.destination__img {
+  transition: transform .4s;
+}
+
+.destination__data {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--opacity-color-30);
+  backdrop-filter: blur(24px);
+  color: var(--black-color);
+  display: grid;
+  row-gap: .25rem;
+  border-radius: 1.5rem;
+  transition: background-color .4s;
+}
+
+.destination__subtitle {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: var(--second-font);
+  color: var(--black-color);
+}
+
+.destination__title {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.destination__country {
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.destination__country i {
+  font-size: 1rem;
+}
+
+.destination__country span {
+  font-size: var(--small-font-size);
+}
+
+.destination__card:hover .destination__img {
+  transform: scale(1.2);
+}
+
+/*=============== GALLERY SMALL CARDS (folosite sub tradiții) ===============*/
+
+.gallery__container {
+  grid-template-columns: 300px;
+  justify-content: center;
+}
+
+.gallery__card {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.gallery__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+            hsla(0, 0%, 0%, 0) 70%, 
+            hsla(0, 0%, 0%, .7) 100%);
+}
+
+.gallery__img {
+  transition: transform .4s;
+}
+
+.gallery__data {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1rem;
+  color: var(--white-color);
+}
+
+.gallery__subtitle {
+  font-size: var(--h1-font-size);
+  font-family: var(--second-font);
+  color: var(--white-color);
+}
+
+.gallery__title {
+  font-size: var(--h2-font-size);
+  color: var(--white-color);
+}
+
+.gallery__card:hover .gallery__img {
+  transform: scale(1.2);
+}
+
+/*=============== JOIN SECTION (newsletter) ===============*/
+
+.join__container {
+  row-gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.join__data {
+  text-align: center;
+}
+
+.join__data .section__title {
+  margin-bottom: 1rem;
+}
+
+.join__description {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.join__form {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.join__input {
+  width: 100%;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 1.5rem 1rem;
+  border-radius: .5rem;
+  transition: background-color .4s;
+}
+
+.join__button {
+  cursor: pointer;
+  padding-block: 1.25rem;
+}
+
+.join__img {
+  width: 300px;
+  border-radius: 1.5rem;
+  justify-self: center;
+}
+
+/*=============== CONTACT PAGE ===============*/
+
+.contact__container {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   gap: 2rem;
+   align-items: flex-start;
+}
+
+.contact__form-wrapper {
+   width: 100%;
+}
+
+.contact__form {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.contact__input,
+.contact__textarea {
+   width: 100%;
+   background-color: #f7f8f8;
+   border: 1px solid #dcdcdc;
+   border-radius: 6px;
+   padding: 1rem;
+   font-size: 1rem;
+   font-family: inherit;
+   resize: none;
+}
+
+.contact__textarea {
+   min-height: 160px;
+}
+
+.contact__button {
+   display: inline-flex;
+   align-items: center;
+   gap: .5rem;
+   background-color: #0f0f0f;
+   color: #fff;
+   border: none;
+   border-radius: 6px;
+   padding: .9rem 1.2rem;
+   font-weight: 600;
+   width: fit-content;
+   cursor: pointer;
+}
+
+/* dreapta */
+.contact__info {
+   padding: 1rem 0;
+}
+
+.contact__info-title {
+   font-size: 1.25rem;
+   font-weight: 600;
+   color: #1a1a1a;
+   margin-bottom: 1.5rem;
+}
+
+.contact__info-block {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+/*=============== CONTACT PAGE FIXES ===============*/
+
+/* Titlul mare centrat */
+.contact__title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bold);
+  color: var(--title-color);
+}
+
+/* Ajustare layout info dreapta */
+.contact__info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contact__info-icon {
+  font-size: 1.2rem;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  color: #000;
+}
+
+.contact__info-text {
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Pe ecrane mici, totul pe o coloană frumos */
+@media screen and (max-width: 768px) {
+  .contact__title {
+    margin-top: 2rem;
+  }
+
+  .contact__info-row {
+    align-items: flex-start;
+  }
+}
+
+
+.contact__info-icon {
+   font-size: 1.25rem;
+   line-height: 1.25rem;
+   background-color: #f3f3f3;
+   border-radius: 6px;
+   padding: .6rem;
+   min-width: 40px;
+   text-align: center;
+   color: #000;
+}
+
+.contact__info-label {
+   font-size: .9rem;
+   font-weight: 500;
+   color: #444;
+   margin-bottom: .2rem;
+}
+
+.contact__info-text {
+   font-size: .95rem;
+   color: #111;
+   line-height: 1.4;
+}
+
+
+/*=============== TRADIȚII PAGE (slider text + imagine) ===============*/
+
+.traditii__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.traditii__img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.traditii__img {
+  width: 100%;
+  max-width: 420px;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,.18);
+  background-color: #fff;
+}
+
+.traditii__panel {
+  position: relative;
+  background-color: var(--container-color, #fff);
+  border-radius: 1rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,.12);
+  padding: 2rem 2.5rem 3rem;
+  height: 550px;
+  min-height: 550px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.traditii__card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.traditii__card.fade-out {
+  opacity: 0;
+}
+
+.traditii__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--title-color, #111);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.traditii__text {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  color: var(--text-color, #444);
+  overflow-y: auto;
+  max-height: 100%;
+  padding-right: .75rem;
+}
+.traditii__text::-webkit-scrollbar {
+  width: 4px;
+}
+.traditii__text::-webkit-scrollbar-thumb {
+  background: var(--text-color,#444);
+  border-radius: 999px;
+}
+
+.traditii__btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0;
+  border-radius: .6rem;
+  background-color: rgba(0,0,0,.9);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.4);
+  transition: transform .15s, opacity .15s;
+  z-index: 10;
+}
+.traditii__btn--prev {
+  right: 3.6rem;
+}
+.traditii__btn:hover {
+  transform: scale(1.07);
+  opacity: .9;
+}
+
+/* responsive tradiții */
+@media screen and (max-width: 768px) {
+  .traditii__container {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+  }
+
+  .traditii__img-wrapper {
+    order: -1;
+  }
+
+  .traditii__img,
+  .traditii__panel {
+    width: 100%;
+    height: auto;
+    min-height: 480px;
+  }
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--black-color);
+  padding-block: 4rem 2rem;
+}
+
+.footer__container {
+  row-gap: 3rem;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 3rem;
+}
+
+.footer__title {
+  color: var(--white-color);
+  font-size: var(--h3-font-size);
+  margin-bottom: 1em;
+}
+
+.footer__links {
+  display: grid;
+  row-gap: .75rem;
+}
+
+.footer__link {
+  color: var(--white-color);
+}
+
+.footer__social {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.footer__social-link {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  transition: transform .4s;
+}
+
+.footer__social-link:hover {
+  transform: translateY(-.25rem);
+}
+
+.footer__copy {
+  display: block;
+  margin-top: 6rem;
+  color: var(--white-color);
+  text-align: center;
+  font-size: var(--small-font-size);
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: .6rem;
+  background-color: hsl(220, 6%, 80%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(220, 6%, 60%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(220, 6%, 50%);
+}
+
+/*=============== SCROLL UP BUTTON ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  box-shadow: 0 8px 16px hsla(0, 0%, 0%, .1);
+  color: var(--title-color);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  border-radius: .25rem;
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s, background-color .4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-.5rem);
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+/*=============== BREAKPOINTS GLOBAL ===============*/
+
+/* Small devices */
+@media screen and (max-width: 768px) {
+  .home__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .home__gallery {
+    order: -1;
+    max-width: 100%;
+  }
+
+  .home__slider {
+    width: 100%;
+    height: 260px;
+  }
+
+  .nav__list .nav__link {
+    color: var(--title-color, #000);
+  }
+
+  .contact__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra small layout tweaks */
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .home__title {
+    font-size: 2.5rem;
+  }
+
+  .destination__container,
+  .gallery__container {
+    grid-template-columns: 250px;
+  }
+
+  .footer__content {
+    grid-template-columns: max-content;
+  }
+}
+
+/* Medium devices */
+@media screen and (min-width: 576px) {
+  .join__container {
+    grid-template-columns: 380px;
+    justify-content: center;
+  }
+
+  .join__img {
+    width: 380px;
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+/* Large devices */
+@media screen and (min-width: 768px) {
+  .destination__container,
+  .gallery__container {
+    grid-template-columns: repeat(2, 300px);
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(4, max-content);
+  }
+}
+
+/* XL devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: 7rem 2rem;
+  }
+  .section__title {
+    margin-bottom: 4rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 4rem;
+  }
+  .nav__toggle, 
+  .nav__close {
+    display: none;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .nav__link {
+    color: var(--white-color);
+  }
+  .nav__link::after {
+    background-color: var(--white-color);
+  }
+  .bg-header .nav__link {
+    color: var(--title-color);
+  }
+  .bg-header .nav__link::after {
+    background-color: var(--title-color);
+  }
+  .dark-theme .nav__menu{
+    box-shadow: none;
+  }
+
+  .home__container {
+    grid-template-columns: 520px 700px;
+    align-items: center;
+    padding-block: 6rem 9rem;
+    gap: 0;
+  }
+
+  .home__data {
+    text-align: initial;
+    transform: translateX(3rem);
+    z-index: 5;
+  }
+
+  .home__description {
+    padding-right: 6rem;
+    margin-bottom: 4rem;
+  }
+
+  .home__slider {
+    width: 600px;
+    height: 400px;
+    transform: translateX(-3rem);
+  }
+
+  .destination__container {
+    grid-template-columns: repeat(3, 340px);
+    gap: 2rem;
+  }
+  .destination__data {
+    padding-inline: 2rem;
+  }
+  .destination__title {
+    font-size: var(--h2-font-size);
+  }
+
+  .gallery__container {
+    grid-template-columns: repeat(2, 500px);
+    gap: 2rem;
+  }
+  .gallery__data {
+    left: 2rem;
+    bottom: 2rem;
+  }
+  .gallery__title {
+    font-size: var(--h1-font-size);
+  }
+
+  .join__container {
+    grid-template-columns: 360px 500px;
+    align-items: center;
+    column-gap: 10rem;
+  }
+  .join__data {
+    text-align: initial;
+  }
+  .join__data .section__title {
+    margin-bottom: 1.5rem;
+    text-align: initial;
+  }
+  .join__description {
+    margin-bottom: 3rem;
+  }
+  .join__img {
+    width: 500px;
+  }
+
+  .footer {
+    padding-top: 4.5rem;
+  }
+  .footer__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+  .footer__content {
+    column-gap: 4.5rem;
+  }
+  .footer__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .scrollup {
+    right: 3rem;
+  }
+}
