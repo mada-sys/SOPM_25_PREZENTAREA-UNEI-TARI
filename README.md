@@ -7,3 +7,6 @@
 - atractiilor turistice
 - traditiilor
 - pagina de contact
+- harta
+
+
