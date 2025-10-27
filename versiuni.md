@@ -23,3 +23,7 @@ v4.1.2 - Corectare de bug (modificarea unei imaginii in pagina atractii.html)
 v5.0.0 - Adaugarea paginii traditii.html
 
 v5.1.0 - Stilizarea paginii traditii.html
+
+v6.0.0 -Adaugarea paginii harta.html
+
+v6.1.0 - Restructurarea tuturor paginilor si curatarea codului
